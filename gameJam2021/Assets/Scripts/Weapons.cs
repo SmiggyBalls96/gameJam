@@ -12,8 +12,7 @@ public class Weapons : MonoBehaviour
     [SerializeField] private Sprite[] weapon_sprites;
 
     [Header("Animations")]
-    [SerializeField] private Animator SwordAnimation;
-    [SerializeField] private Animator AxeAnimation;
+    [SerializeField] private Animator Animations;
 
     //what type the object is
     public enum WeaponTypes { Empty, Axe, Sword };
@@ -33,6 +32,8 @@ public class Weapons : MonoBehaviour
 
     [SerializeField] private float attackSpeed;
     [SerializeField] private float damage;
+
+    private float timeSinceLastAttack;
 
     //private methods
     private void update_weapon()
@@ -70,8 +71,20 @@ public class Weapons : MonoBehaviour
     /// <param name="attackModifier"></param>
     public void Attack(float attackModifier)
     {
-        //animate and do damage
+        //animate and do damage only if the character has finished its cooldown (attackSpeed variable)
+        if (timeSinceLastAttack >= attackSpeed)
+        {
+            timeSinceLastAttack = 0f;
 
+            switch (type)
+            {
+                case WeaponTypes.Sword:
+                    break;
+
+                case WeaponTypes.Axe:
+                    break;
+            }
+        }
     }
 
     void Awake()
@@ -79,5 +92,10 @@ public class Weapons : MonoBehaviour
         weaponSR = weapon_holder.GetComponent<SpriteRenderer>();
         type = WeaponTypes.Empty;
         update_weapon();
+    }
+
+    void Update()
+    {
+        timeSinceLastAttack += Time.deltaTime;
     }
 }
