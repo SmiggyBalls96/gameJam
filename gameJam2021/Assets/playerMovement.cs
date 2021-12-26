@@ -23,6 +23,8 @@ public class playerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+
         if (!Sprint)    //If not sprinting then and pressing control, then sprint
         {
             if(Input.GetKey(KeyCode.LeftControl) == true && sprintTimer < 5 && sprintDelay == 0)   // You can only sprint for 5 seconds, and if your delay between sprintign and resting is over
