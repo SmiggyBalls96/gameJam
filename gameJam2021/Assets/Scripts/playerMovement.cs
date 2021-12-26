@@ -19,6 +19,7 @@ public class playerMovement : MonoBehaviour
     
     void Update()
     {
+
         enduranceTimer += Time.deltaTime;
 
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -43,10 +44,15 @@ public class playerMovement : MonoBehaviour
                 {
                     enduranceTimer = 0f;
                     sprintTimer--;
-                    sprintDelay--;
-
-                    //Debug.Log(sprintTimer);
-                    //Debug.Log(sprintDelay);
+                    if(sprintDelay > 0)
+                    {
+                        sprintDelay--;
+                    }
+                    
+                }
+                if(enduranceTimer >= .5)    //Resets endurance timer to ensure that it doesn't continue to count while not sprinting
+                {
+                    enduranceTimer = 0f;
                 }
                 if (sprintTimer == 5)
                 {
@@ -54,6 +60,10 @@ public class playerMovement : MonoBehaviour
                 }
                 
             }
+            GameObject thePlayer = GameObject.Find("PlayerTemp");       //Updating for the stamina bar
+            playerStamina playerScript = thePlayer.GetComponent<playerStamina>();
+            playerScript.staminaValue = 5 - sprintTimer;
+
         }
 
     }
