@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100043672}
   - component: {fileID: 100043673}
+  - component: {fileID: 100043674}
   m_Layer: 0
   m_Name: Weapon Holder
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100043671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.87, y: 189.07, z: -1157.3422}
+  m_LocalPosition: {x: -78.87, y: 189.07, z: -0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2140950800}
@@ -174,6 +175,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &100043674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100043671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69836942ecdcd04797dff2029c0005c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 988609423}
+  weapon_holder: {fileID: 2140950799}
+  weapon_sprites:
+  - {fileID: 21300000, guid: 540657f268912ed4b90bbb100b377b73, type: 3}
+  - {fileID: 21300000, guid: 4370911bd39440f4fa8acfbbb8d30d75, type: 3}
+  Animations: {fileID: 100043673}
+  swordSpeed: 0
+  swordDamage: 0
+  swordRange: 0
+  axeSpeed: 0
+  axeDamage: 0
+  axeRange: 0
+  attackSpeed: 0
+  damage: 0
+  range: 0
 --- !u!1 &129477048
 GameObject:
   m_ObjectHideFlags: 0

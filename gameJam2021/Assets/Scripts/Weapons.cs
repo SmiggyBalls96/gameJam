@@ -21,17 +21,21 @@ public class Weapons : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private float swordSpeed;
     [SerializeField] private float swordDamage;
+    [SerializeField] private float swordRange;
 
     [Space]
 
     [SerializeField] private float axeSpeed;
     [SerializeField] private float axeDamage;
+    [SerializeField] private float axeRange;
 
     [Space] //double spacing for more room and easier to understand how things are separated in the inspector
     [Space]
 
+    //current stats of the player
     [SerializeField] private float attackSpeed;
     [SerializeField] private float damage;
+    [SerializeField] private float range;
 
     private float timeSinceLastAttack;
 
@@ -49,10 +53,21 @@ public class Weapons : MonoBehaviour
 
             case WeaponTypes.Sword:
                 weaponSR.sprite = weapon_sprites[0];
+
+                attackSpeed = swordSpeed;
+                damage = swordDamage;
+                range = swordRange;
+
                 break;
+
 
             case WeaponTypes.Axe:
                 weaponSR.sprite = weapon_sprites[1];
+
+                attackSpeed = axeSpeed;
+                damage = axeDamage;
+                range = swordRange;
+
                 break;
         }
     }
@@ -79,9 +94,15 @@ public class Weapons : MonoBehaviour
             switch (type)
             {
                 case WeaponTypes.Sword:
+                    Animations.SetTrigger("Sword");
+
+                    //do damage to enemies right in front of the player
                     break;
 
                 case WeaponTypes.Axe:
+                    Animations.SetTrigger("Axe");
+
+                    //do damage to enemies all around the player in a certain radius
                     break;
             }
         }
@@ -89,13 +110,28 @@ public class Weapons : MonoBehaviour
 
     void Awake()
     {
+        //set variables
+        swordDamage = 10;
+        swordSpeed = 0.8f;
+        swordRange = 0.1f;
+
+        axeDamage = 25;
+        axeSpeed = 2f;
+        axeRange = 0.3f;
+
         weaponSR = weapon_holder.GetComponent<SpriteRenderer>();
-        type = WeaponTypes.Empty;
+        type = WeaponTypes.Sword;
         update_weapon();
     }
 
     void Update()
     {
-        timeSinceLastAttack += Time.deltaTime;
+        timeSinceLastAttack += Time.deltaTime; //update the attack cooldown for the player
+    }
+
+    void LateUpdate()
+    {
+        //move to the player's position
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -0.23f);
     }
 }
