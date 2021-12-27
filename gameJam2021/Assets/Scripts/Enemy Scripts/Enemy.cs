@@ -6,6 +6,7 @@ using Pathfinding;
 public class Enemy : MonoBehaviour
 {
     public enum EnemyTypes { Zombie, Slime };
+    public static int enemyTypeCount; //how many types of enemies there are
     private EnemyTypes type;
 
     [SerializeField] private GameObject player;
@@ -65,6 +66,8 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
+        enemyTypeCount = 2;
+
         ZombieSpeed = 1f;
         ZombieDamage = 1;
         ZombieAttackSpeed = 1f;
