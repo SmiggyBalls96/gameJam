@@ -119,6 +119,8 @@ public class Weapons : MonoBehaviour
         axeSpeed = 2f;
         axeRange = 0.3f;
 
+        timeSinceLastAttack = 0f;
+
         weaponSR = weapon_holder.GetComponent<SpriteRenderer>();
         type = WeaponTypes.Empty;
         update_weapon();
