@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 
     private Inventory inventory;
     [SerializeField] private UI_Inventory uiInventory;
+    public GameObject inventoryGUI;
+
+    private int count = 0;
     private void Awake()
     {
         inventory = new Inventory();
@@ -25,6 +28,20 @@ public class Player : MonoBehaviour
             //Touching Item
             inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) == true && count == 0)   // if press e, open inventory, else don't
+        {
+            inventoryGUI.SetActive(true); ;
+            count++;
+        }
+        else if (Input.GetKeyDown(KeyCode.E) == true && count == 1)
+        {
+            inventoryGUI.SetActive(false);
+            count--;
         }
     }
 }
