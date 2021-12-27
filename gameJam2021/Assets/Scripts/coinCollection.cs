@@ -12,24 +12,22 @@ public class coinCollection : MonoBehaviour
     public int coins;
     void Start()
     {
-        
+        gameObject.tag = "Player";
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //Check to see if the tag on the collider is equal to Enemy
+        if (other.gameObject.CompareTag("coin"))
+        {
+            coins++;
+            Destroy(other.gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         txt.text = coins.ToString();
-
-
-        /*
-         * if(player touches coin){
-         *      update coin value text
-         * }
-         * if (player spends coin){
-         *      update coin value text
-         * }
-         * 
-         * 
-         */
     }
 }
