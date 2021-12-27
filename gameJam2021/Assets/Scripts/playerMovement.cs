@@ -10,7 +10,9 @@ public class playerMovement : MonoBehaviour
 
     public float sprintDelay = 0f; // Delay between exhausting your endurance and before you can sprint again, increases by 5 seconds every time you exhaust endurance (5 second sprint cooldown)
 
+    public Transform player;    // set scale to -1 when walking to right 
     public Rigidbody2D rigidBody;
+    public Animator animator;
 
     Vector2 movement;
 
@@ -63,6 +65,9 @@ public class playerMovement : MonoBehaviour
             playerStamina playerScript = thePlayer.GetComponent<playerStamina>();
             playerScript.staminaValue = 5 - sprintTimer;
 
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
         }
 
     }

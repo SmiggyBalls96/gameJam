@@ -29,5 +29,6 @@ public class coinCollection : MonoBehaviour
     void Update()
     {
         txt.text = coins.ToString();
+
     }
 }

@@ -9,14 +9,14 @@ public class Player : MonoBehaviour
     [SerializeField] private UI_Inventory uiInventory;
     public GameObject inventoryGUI;
 
-    private int count = 0;
+    private int count = 1;
     private void Awake()
     {
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);    //pass inventory object into inventory script
 
         ItemWorld.SpawnItemWorld(new Vector3(5, 5), new Item { itemType = Item.ItemType.RecallPotion, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(-5, 5), new Item { itemType = Item.ItemType.Sword, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(5, 0), new Item { itemType = Item.ItemType.Sword, amount = 1 });
         ItemWorld.SpawnItemWorld(new Vector3(0, 5), new Item { itemType = Item.ItemType.Axe, amount = 1 });
     }
 
@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        inventoryGUI.SetActive(false);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) == true && count == 0)   // if press e, open inventory, else don't
@@ -43,5 +48,7 @@ public class Player : MonoBehaviour
             inventoryGUI.SetActive(false);
             count--;
         }
+
+
     }
 }
