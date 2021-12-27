@@ -120,7 +120,7 @@ public class Weapons : MonoBehaviour
         axeRange = 0.3f;
 
         weaponSR = weapon_holder.GetComponent<SpriteRenderer>();
-        type = WeaponTypes.Sword;
+        type = WeaponTypes.Empty;
         update_weapon();
     }
 
