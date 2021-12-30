@@ -3,7 +3,11 @@ guid: 363ead379070730419b092fe4e880e52
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pfItemWorld: {instanceID: 0}
+  - swordSprite: {fileID: 21300000, guid: 540657f268912ed4b90bbb100b377b73, type: 3}
+  - battleAxeSprite: {fileID: 21300000, guid: 4370911bd39440f4fa8acfbbb8d30d75, type: 3}
+  - recallPotionSprite: {fileID: 21300000, guid: b7e58bcf36d50474aa8d41ce88f941fd, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
