@@ -180,7 +180,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -995,9 +995,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 166
-        y: 99
+        y: 100
         width: 32
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1016,9 +1016,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 199
-        y: 99
+        y: 100
         width: 32
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1037,9 +1037,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 232
-        y: 99
+        y: 100
         width: 32
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1058,9 +1058,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 66
+        y: 67
         width: 32
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1079,9 +1079,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 67
-        y: 66
+        y: 67
         width: 32
-        height: 32
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1100,7 +1100,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 166
-        y: 66
+        y: 67
         width: 32
         height: 32
       alignment: 0
@@ -1121,7 +1121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 199
-        y: 66
+        y: 67
         width: 32
         height: 32
       alignment: 0
@@ -1142,7 +1142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 232
-        y: 66
+        y: 67
         width: 32
         height: 32
       alignment: 0
