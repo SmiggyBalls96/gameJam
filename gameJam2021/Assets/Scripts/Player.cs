@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Weapons weaponController;
 
     private Inventory inventory;
     [SerializeField] private UI_Inventory uiInventory;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         inventoryGUI.SetActive(false);
+        weaponController.set_type(Weapons.WeaponTypes.Axe);
     }
 
     private void Update()
@@ -49,6 +51,7 @@ public class Player : MonoBehaviour
             count--;
         }
 
-
+        if(Input.GetKeyDown(KeyCode.Z))
+            weaponController.Attack(1);
     }
 }
